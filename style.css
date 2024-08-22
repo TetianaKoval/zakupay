@@ -114,7 +114,7 @@ body._lock {
 .header__logo {
   width: 150px;
   height: 70px;
-  background-image: url('/images/logo.webp');
+  background-image: url('images/logo.webp');
   position: relative;
   z-index: 5;
   background-size: contain;
@@ -538,22 +538,22 @@ box-shadow: 9px 9px 15px -1px rgba(0,0,0,0.15);
 }
 
 .categories__item--kitchen {
-  background-image: url("/images/categories/kitchen.jpg");
+  background-image: url("images/categories/kitchen.jpg");
 }
 .categories__item--tools {
-  background-image: url("/images/categories/instrumenty.jpeg");
+  background-image: url("images/categories/instrumenty.jpeg");
 }
 .categories__item--electronic {
-  background-image: url("/images/categories/elektronni-tovary.jpg");
+  background-image: url("images/categories/elektronni-tovary.jpg");
 }
 .categories__item--garden {
-  background-image: url("/images/categories/dlia-sadu.jpeg");
+  background-image: url("images/categories/dlia-sadu.jpeg");
 }
 .categories__item--generators {
-  background-image: url("/images/categories/generatory.jpg");
+  background-image: url("images/categories/generatory.jpg");
 }
 .categories__item--home {
-  background-image: url("/images/categories/dlia-domu.webp");
+  background-image: url("images/categories/dlia-domu.webp");
 }
 
 .categories__item:hover .category__name{
@@ -684,7 +684,7 @@ box-shadow: 9px 9px 15px -1px rgba(0,0,0,0.15);
 .footer__right-block {
   min-width: 300px;
   height: 200px;
-  background-image: url("/images/logo-footer.webp");
+  background-image: url("images/logo-footer.webp");
   background-repeat: no-repeat;
   background-position: right top;
   text-align: end;
