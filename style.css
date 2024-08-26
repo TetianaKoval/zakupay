@@ -62,6 +62,30 @@ h2.page__title {
   margin-bottom: 50px;
 }
 
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.link-in-text {
+  color:#333;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.link-in-text:hover {
+  color:rgb(40, 54, 249)
+}
+
+.page__article-text {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 26px;
+  font-size: 16px;
+}
+
 body._lock {
   overflow: hidden;
 }
@@ -131,8 +155,11 @@ body._lock {
 .menu__link {
   color: #333;
   font-size: 17px;
-  /* text-transform: uppercase; */
   letter-spacing: 1px;
+}
+
+.menu__link--categories {
+  cursor: pointer;
 }
 
 .menu__sub-list {

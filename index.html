@@ -6,6 +6,8 @@
   <title>Zakupay</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="css/styleSwiper.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon-32x32.png" type="image/png">
 </head>
 <body class="page__body">
   <svg width="0" height="0" style="position:absolute">
@@ -31,10 +33,12 @@
           <nav class="menu__body">
             <ul class="menu__list">
               <li><a data-goto=".page__slider" href="#" class="menu__link link-to-page" data-page="home">Головна</a></li>
-              <li><a data-goto=".page__section_2" href="#" class="menu__link link-to-page">Доставка і оплата</a></li>
-              <li><a data-goto=".about-us" href="#" class="menu__link">Про нас</a></li>
+              
+              <li><a href="#" data-page="oplata-i-dostavka" class="menu__link link-to-page">Доставка і оплата</a></li>
+
+              <li><a data-goto=".about-us" href="#" class="menu__link link-to-page" data-page="home">Про нас</a></li>
               <li>
-                <a href="#" class="menu__link">Категорії</a>
+                <a class="menu__link menu__link--categories">Категорії</a>
                 <span class="menu__arrow"></span>
                 <ul class="menu__sub-list">
                   <li>

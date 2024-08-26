@@ -59,19 +59,18 @@ if (menuLinks.length > 0) {
       document.body.classList.remove('_lock');
     }
 
-    if(menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
-      const gotoBlock = document.querySelector(menuLink.dataset.goto);
+    // if(menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+    //   e.preventDefault();
+    //   const gotoBlock = document.querySelector(menuLink.dataset.goto);
 
-      const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
+    //   const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
 
 
-      window.scrollTo({
-        top: gotoBlockValue,
-        behavior: "smooth"
-      });
-
-      e.preventDefault();
-    }
+    //   window.scrollTo({
+    //     top: gotoBlockValue,
+    //     behavior: "smooth"
+    //   });
+    // }
 
   }
 }
@@ -95,12 +94,17 @@ if (isMobile.any()) {
   document.body.classList.add('_touch');
 
   let menuArrows = document.querySelectorAll('.menu__arrow');
+  let categoriesLink = document.querySelector('.menu__link--categories')
 
   if (menuArrows.length > 0 ) {
     for (let i = 0; i < menuArrows.length; i++) {
       const menuArrow = menuArrows[i];
 
       menuArrow.addEventListener("click", function(e) {
+        menuArrow.parentElement.classList.toggle('_active');
+      })
+
+      categoriesLink.addEventListener('click', function (e) {
         menuArrow.parentElement.classList.toggle('_active');
       })
     }
@@ -127,6 +131,8 @@ fetch('footer.html')
 
 document.addEventListener('DOMContentLoaded', function() {
       // Початкове налаштування обробників подій для посилань
+      
+      
       setLinkEventHandlers();
 
       // Обробка події popstate для кнопок "Назад" і "Вперед" браузера
@@ -147,19 +153,30 @@ function setLinkEventHandlers() {
    // Використовуємо делегування подій для обробки кліків на посилання з класом 'link-to-page'
     document.body.addEventListener('click', function(event) {
     const link = event.target.closest('.link-to-page'); // Перевірка, чи клік був по посиланню
+    let gotoBlockValue = 0;
+
+    console.log(gotoBlockValue);
+
+
+    if(link && link.dataset.goto && document.querySelector(link.dataset.goto)) {
+      event.preventDefault();
+      const gotoBlock = document.querySelector(link.dataset.goto);
+      gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
+    }
+    
     if (link) {
-        event.preventDefault(); // Запобігаємо переходу по посиланню
+      event.preventDefault(); // Запобігаємо переходу по посиланню
 
-        const page = link.getAttribute('data-page'); // Отримуємо значення атрибуту data-page
-        loadPage(page); // Завантажуємо потрібну сторінку
+      const page = link.getAttribute('data-page'); // Отримуємо значення атрибуту data-page
+      loadPage(page, gotoBlockValue); // Завантажуємо потрібну сторінку
 
-        // Оновлюємо URL без перезавантаження сторінки
-        history.pushState({page: page}, '', `#${page}`);
+      // Оновлюємо URL без перезавантаження сторінки
+      history.pushState({page: page}, '', `#${page}`);
     }
 });
 }
 
-function loadPage(page) {
+function loadPage(page, scrollTo) {
   const mainContent = document.getElementById('main-content');
     const filePath = `${page}.html`; // Визначаємо шлях до файлу
 
@@ -171,8 +188,9 @@ function loadPage(page) {
             initializeSwiper(); // Ініціалізуємо Swiper для новозавантаженого контенту
             productsLoad(page);
 
+
             window.scrollTo({
-              top: 0,
+              top: scrollTo,
               behavior: "smooth"
             });
         })
@@ -225,10 +243,10 @@ const productsLoad = (category) => {
         container.append(divItem);
       });
 
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+      // window.scrollTo({
+      //   top: 0,
+      //   behavior: "smooth"
+      // });
     }
 
     const renderPagination = (products, numberOfProducts) => {
