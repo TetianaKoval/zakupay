@@ -19,7 +19,7 @@
 
     <symbol viewBox="0 0 18 18" style="enable-background:new 0 0 18 18" xml:space="preserve" id="icon-pt" xmlns="http://www.w3.org/2000/svg"><path d="M9 0C4 0 0 4 0 9c0 3.7 2.2 6.9 5.4 8.2 0-.6 0-1.4.2-2.1.2-.7 1.2-4.9 1.2-4.9s-.4-.5-.4-1.4c0-1.3.8-2.3 1.7-2.3.8 0 1.2.6 1.2 1.4 0 .8-.5 2.1-.8 3.2-.2.9.5 1.7 1.5 1.7 1.7 0 2.9-2.2 2.9-4.8 0-2-1.3-3.4-3.7-3.4-2.7 0-4.4 2-4.4 4.3 0 .8.2 1.3.6 1.8.2.2.2.3.1.5 0 .2-.1.6-.2.7-.1.2-.2.3-.5.2C3.5 11.6 3 10.2 3 8.7 2.9 6.1 5.1 3 9.3 3 12.8 3 15 5.5 15 8.2c0 3.5-2 6.2-4.9 6.2-1 0-1.9-.5-2.2-1.1 0 0-.5 2.1-.6 2.5-.2.7-.6 1.4-.9 1.9.9.2 1.7.3 2.6.3 5 0 9-4 9-9s-4-9-9-9z"></path></symbol>
   </svg>
-  <div class="wrapper">
+  <div>
     <header class="header">
       <div class="header__container">
         <a href="/" class="header__logo"></a>
@@ -27,136 +27,60 @@
           <div class="menu__icon">
             <span></span>
           </div>
-
+  
           <nav class="menu__body">
             <ul class="menu__list">
-              <li><a data-goto=".page__slider" href="#" class="menu__link">Головна</a></li>
-              <li><a data-goto=".page__section_2" href="#" class="menu__link">Доставка і оплата</a></li>
+              <li><a data-goto=".page__slider" href="#" class="menu__link link-to-page" data-page="home">Головна</a></li>
+              <li><a data-goto=".page__section_2" href="#" class="menu__link link-to-page">Доставка і оплата</a></li>
               <li><a data-goto=".about-us" href="#" class="menu__link">Про нас</a></li>
               <li>
                 <a href="#" class="menu__link">Категорії</a>
                 <span class="menu__arrow"></span>
                 <ul class="menu__sub-list">
                   <li>
-                    <a href="/" class="menu__sub-link">Інтрументи</a>
+                    <a href="#" class="menu__sub-link link-to-page" data-page="tovary-dlya-kuhni">
+                      Товари для кухні
+                    </a>
                   </li>
                   <li>
-                    <a href="/" class="menu__sub-link">Для кухні</a>
+                    <a href="#" class="menu__sub-link link-to-page" data-page="instrumenty">
+                      Інтрументи
+                    </a>
                   </li>
                   <li>
-                    <a href="/" class="menu__sub-link">Іграшки</a>
+                    <a href="#" class="menu__sub-link link-to-page" data-page="elektronni-tovary">
+                      Електронні товари
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="menu__sub-link link-to-page" data-page="tovary-dlya-sadu">
+                      Товари для саду
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="menu__sub-link link-to-page" data-page="generatory">
+                      Генератори
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="menu__sub-link link-to-page" data-page="tovary-dlya-domu">
+                      Товари для дому
+                    </a>
                   </li>
                 </ul>
               </li>
             </ul>
           </nav>
-
+  
         </div>
       </div>
     </header>
 
-    <main class="page">
-      <div class="dark-wrapper">
-        <section class="page__slider page__section slider swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="slider__content">
-                <div class="slider__title">Товари для кухні</div>
-                <div class="slider__sub-title">асортимент</div>
-                <a class="slider__button">Каталог товарів</a>
-              </div>
-              <div class="slider__img">
-                <img src="images/slides/slide1.jpg" alt="kitchen">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="slider__content">
-                <div class="slider__title">Інструменти</div>
-                <div class="slider__sub-title">асортимент</div>
-                <a class="slider__button">Каталог товарів</a>
-              </div>
-              <div class="slider__img">
-                <img src="images/slides/slide2.jpg" alt="kitchen">
-              </div>
-            </div>
-          </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-          
-        </section>
-      </div>
+    <main class="page" id="main-content"></main>
 
-      <section class="page__section page__section-content categories page__categories">
-        <h1 class="page__title categories__title">Категорії</h1>
-        <div class="categories__title categories__container">
-          <a class="categories__item category categories__item--kitchen">
-            <div class="category__name">Товари для кухні</div>
-          </a>
-          <a class="categories__item category categories__item--tools">
-            <div class="category__name">Інструменти</div>
-          </a>
-          <a class="categories__item category categories__item--electronic">
-            <div class="category__name">Електронні товари</div>
-          </a>
-          <a class="categories__item category categories__item--garden">
-            <div class="category__name">Товари для саду</div>
-          </a>
-          <a class="categories__item category categories__item--generators">
-            <div class="category__name">Генератори</div>
-          </a>
-          <a class="categories__item category categories__item--home">
-            <div class="category__name">Товари для дому</div>
-          </a>
-        </div>
-      </section>
-
-      <section class="page__section page__section-content about-us">
-        <h2 class="page__title">Про нас</h2>
-        <div class="page__text">
-            <p>
-            За цей час ми зарекомендували себе на ринку та завоювали довіру більш як 60 тисяч клієнтів. Наш успіх базується на якості товарів, асортименті та відмінному обслуговуванні.</p>
-            
-            <p>Однією з основних переваг нашого магазину є розмаїтість товарів. Ми горді тим, що пропонуємо великий асортимент товарів для кожного куточка вашого життя. Ви знайдете у нас&nbsp;товари для дому, кухні, ванної кімнати, а також необхідні приладдя для подорожей і туризму. Автолюбителям ми також маємо що запропонувати, завдяки нашим автомобільним аксесуарам. Ви не залишите осторонь і ваші діти - ми пропонуємо товари для дітей різного віку. Подбайте про себе завдяки нашому розділу краси та здоров'я, а також не забувайте про ваших пушистих друзів завдяки різноманіттю товарів для тварин. Ми прагнемо задовольнити всі ваші потреби.<br>
-            <br>
-            Ми робимо все можливе, щоб забезпечити вам швидку та надійну доставку. Вам не потрібно чекати довго, щоб отримати свої покупки - ми знаємо, що ваш час цінний. Що стосується цін, то наші товари доступні і конкурентноздатні.</p>
-            
-            <p>Дякуємо, що обрали наш магазин, і ми завжди готові вас обслуговувати та допомогти знайти та отримати товари, які вам потрібні. Ми цінуємо ваше довір'я і готові надавати вам найкращий досвід покупок.</p>
-        </div>
-      </section>
-    </main>
-
-    <footer class="page__footer footer">
-      <div class="footer__wrapper">
-        <div class="footer__contacts contacts">
-          <p class="contacts__title">Контактна інформація</p>
-          <div class="contacts__address">
-            <svg class="icon icon--location"><use xlink:href="#icon-location"></use></svg>
-            м. Тернопіль, Тернопільська область, вул. Д. Січинського, 10.
-          </div>
-          <div class="contacts__phone-number">
-            <svg class="icon icon--phone"><use xlink:href="#icon-phone"></use></svg>+38 (067) 666-5861
-          </div>
-        </div>
-        <div class="footer__right-block right-block">
-          <div class="right-block__icons">
-            <a href="https://instagram.com/zakupay_shop" target="_blank">
-              <svg class="right-block__icon icon-ig"><use xlink:href="#icon-ig"></use></svg>
-            </a>
-            <a href="https://instagram.com/zakupay_shop" target="_blank">
-              <svg class="right-block__icon icon-tg"><use xlink:href="#icon-tg"></use></svg>
-            </a>
-            <a href="https://instagram.com/zakupay_shop" target="_blank">
-              <svg class="right-block__icon icon-pt"><use xlink:href="#icon-pt"></use></svg>
-            </a>
-            
-          </div>
-          <p class="right-block__text">Всі права захищено © 2024</p>
-        </div>
-      </div>
-
-
-    </footer>
+    <div id="footer"></div>
   </div>
+  <script src="js/products/products.js"></script>
   <script src="js/swiper.js"></script>
   <script src="script.js"></script>
 </body>

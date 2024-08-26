@@ -51,6 +51,7 @@ h1.page__title {
   font-size: 30px;
   font-weight: 600;
   letter-spacing: 2px;
+  margin-bottom: 50px;
 }
 h2.page__title {
   text-transform: uppercase;
@@ -66,7 +67,7 @@ body._lock {
 }
 
 .page {
-  padding: 70px 0 90px 0;
+  padding: 35px 0 40px 0;
 }
 
 .page__title {
@@ -383,13 +384,20 @@ body._touch .menu__list > li._active .menu__arrow {
 .page__slider {
   width: 100%;
   height: 550px;
-   
+}
+
+@media (max-width: 767px) {
+.page__slider {
+  width: 100%;
+  height: 350px;
+}
 }
 
 .dark-wrapper {
   background-color: black;
   width: 100%;
   height: 100%;
+  margin-bottom: 40px;
 }
 
 
@@ -498,7 +506,7 @@ body._touch .menu__list > li._active .menu__arrow {
 }
 
 .page__slider {
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 
 
@@ -561,8 +569,6 @@ box-shadow: 9px 9px 15px -1px rgba(0,0,0,0.15);
   width: 100%;
   background: hsla(0, 0%, 0%, 0.534);
 }
-
-
 
 .category__name {
   transition: all 0.3s ease-in-out;
@@ -714,6 +720,195 @@ box-shadow: 9px 9px 15px -1px rgba(0,0,0,0.15);
   .contacts__title {
     text-align: center;
   }
+}
+
+
+.wrapper {
+  padding-top: 70px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.products__product {
+  cursor: pointer;
+  overflow: hidden;
+  flex-basis: 250px;
+  flex-grow: 1;
+  /* height: 380px; */
+  
+}
+
+.product {
+  position: relative;
+  border: 1px solid #e3e3e3;
+  border-radius: 7px;
+  -webkit-box-shadow: 9px 9px 15px -1px rgba(0,0,0,0.15);
+  -moz-box-shadow: 9px 9px 15px -1px rgba(0,0,0,0.15);
+  box-shadow: 9px 9px 15px -1px rgba(0,0,0,0.15);
+  position: relative;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+  max-width: 300px;
+  padding-bottom: 30px;
+}
+
+.product__img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.product__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+  background-color: #fff;
+}
+
+.product__discount {
+  background-color: rgb(218, 62, 62);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.product__title {
+  padding: 20px 20px 0px 20px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 17px;
+  color: #333;
+}
+
+.product__prev-price {
+  display: inline;
+  font-size: 20px;
+  color: #4b4b4b;
+  text-decoration: line-through;
+}
+
+.product__price {
+  display: inline;
+  font-size: 25px;
+  font-weight: 600;
+  color: #333;
+  text-align: end;
+}
+
+.product__prices {
+  margin: 0 auto;
+  width: 80%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.product__read-more {
+  display: block;
+  width: 80%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.product:hover {
+  transform: scale(1.07);
+  background-color: #c1c1c1;
+}
+
+.product:hover .product__read-more {
+  background-color: #fff;
+  color: #333;
+}
+
+.products__pagination {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  visibility: visible;
+  pointer-events: all;
+  justify-content: center;
+  gap: 20px;
+  color: #333;
+  align-items: center;
+}
+
+.pagination__hidden {
+  display: none;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.prev-button,
+.next-button {
+  background-color: #333;
+  color: #fff;
+  width: 60px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.pagination_list {
+  display: flex;
+  align-items: center;
+  height: 20px;
+}
+
+.pagination_item {
+  font-size: 17px;
+  line-height: 17px;
+  margin-right: 20px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.pagination_item:last-child {
+  margin-right: 0px;
+}
+
+.pagination_item--active {
+  border: 1px solid #333;
+  border-radius: 3px;
 }
 
 
