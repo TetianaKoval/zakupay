@@ -115,8 +115,6 @@ if (isMobile.any()) {
 }
 
 
-
-
 // підключення footer
 
 fetch('footer.html')
@@ -124,7 +122,6 @@ fetch('footer.html')
   .then(data => {
       document.getElementById('footer').innerHTML = data;
   });
-
 
 // функціонал навігації по контенту
 
@@ -153,22 +150,18 @@ function setLinkEventHandlers() {
    // Використовуємо делегування подій для обробки кліків на посилання з класом 'link-to-page'
     document.body.addEventListener('click', function(event) {
     const link = event.target.closest('.link-to-page'); // Перевірка, чи клік був по посиланню
-    let gotoBlockValue = 0;
 
-    console.log(gotoBlockValue);
-
-
-    if(link && link.dataset.goto && document.querySelector(link.dataset.goto)) {
-      event.preventDefault();
-      const gotoBlock = document.querySelector(link.dataset.goto);
-      gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
-    }
-    
     if (link) {
       event.preventDefault(); // Запобігаємо переходу по посиланню
 
       const page = link.getAttribute('data-page'); // Отримуємо значення атрибуту data-page
-      loadPage(page, gotoBlockValue); // Завантажуємо потрібну сторінку
+
+      // Завантажуємо потрібну сторінку
+      if (link.dataset.goto) {
+        loadPage(page, link.dataset.goto);
+      } else {
+        loadPage(page);
+      }
 
       // Оновлюємо URL без перезавантаження сторінки
       history.pushState({page: page}, '', `#${page}`);
@@ -176,9 +169,10 @@ function setLinkEventHandlers() {
 });
 }
 
-function loadPage(page, scrollTo) {
+function loadPage(page, goto) {
   const mainContent = document.getElementById('main-content');
     const filePath = `${page}.html`; // Визначаємо шлях до файлу
+    
 
     fetch(filePath)
         .then(response => response.text())
@@ -188,11 +182,20 @@ function loadPage(page, scrollTo) {
             initializeSwiper(); // Ініціалізуємо Swiper для новозавантаженого контенту
             productsLoad(page);
 
+            if (goto) {
+              const gotoBlock = document.querySelector(goto);
+              const gotoBlockV = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
 
-            window.scrollTo({
-              top: scrollTo,
-              behavior: "smooth"
-            });
+              window.scrollTo({
+                top: gotoBlockV,
+                behavior: "smooth"
+              });
+            } else {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+              });
+            }
         })
         .catch(error => {
             console.error('Помилка завантаження сторінки:', error);
