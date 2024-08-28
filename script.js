@@ -28,7 +28,7 @@ const isMobile = {
 
 // прокрутка при кліку на посилання
 
-const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
+const menuLinks = document.querySelectorAll('.menu__link--simple');
 const menuSubLinks = document.querySelectorAll('.menu__sub-link');
 
 if (menuSubLinks.length > 0) {
@@ -51,13 +51,14 @@ if (menuLinks.length > 0) {
   });
 
   function onMenuLinkClick(e) {
-    const menuLink = e.target;
-
+    console.log('click on menu item');
     if (iconMenu.classList.contains('_active')) {
       menuBody.classList.remove('_active');
       iconMenu.classList.remove('_active');
       document.body.classList.remove('_lock');
     }
+
+    
 
     // if(menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
     //   e.preventDefault();
@@ -73,7 +74,7 @@ if (menuLinks.length > 0) {
     // }
 
   }
-}
+  }
 
 // прокрутка при кліку на посилання end
 
@@ -246,24 +247,28 @@ const productsLoad = (category) => {
         container.append(divItem);
       });
 
-      // window.scrollTo({
-      //   top: 0,
-      //   behavior: "smooth"
-      // });
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     }
 
     const renderPagination = (products, numberOfProducts) => {
 
       const pageCount = Math.ceil(products.length / numberOfProducts);
 
-      const ul = document.querySelector('.pagination_list');
+      if (pageCount > 1) {
+        const ul = document.querySelector('.pagination_list');
 
-      for (let i = 1; i <= pageCount; i++) {
-        const li = renderBtn(i);
-        ul.append(li);
+        for (let i = 1; i <= pageCount; i++) {
+          const li = renderBtn(i);
+          ul.append(li);
+        }
+
+        pagination.classList.remove('pagination__hidden');
       }
 
-      pagination.classList.remove('pagination__hidden');
+      
     }
 
     const renderBtn = (page) => {

@@ -53,6 +53,7 @@ h1.page__title {
   letter-spacing: 2px;
   margin-bottom: 50px;
 }
+
 h2.page__title {
   text-transform: uppercase;
   text-align: center;
@@ -60,6 +61,19 @@ h2.page__title {
   font-weight: 600;
   letter-spacing: 2px;
   margin-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+  h1.page__title {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  h2.page__title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
 }
 
 h3 {
@@ -91,7 +105,9 @@ body._lock {
 }
 
 .page {
-  padding: 35px 0 40px 0;
+
+  /* було 35 зверху */
+  padding: 0px 0 40px 0;
 }
 
 .page__title {
@@ -108,9 +124,15 @@ body._lock {
 }
 
 .page__section-content {
-  padding: 30px;
+  padding: 50px 30px 0;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .page__section-content {
+    padding: 30px 10px 0;
+  }
 }
 
 
@@ -137,14 +159,24 @@ body._lock {
 }
 
 .header__logo {
-  width: 150px;
-  height: 70px;
+  width: 130px;
+  height: 50px;
   background-image: url('images/logo.webp');
   position: relative;
   z-index: 5;
   background-size: contain;
   background-position: center;
   display: block;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  .header__logo {
+    width: 100%;
+    flex-grow: 1;
+    align-self: center;
+    transform: translate(14px, 0px);
+}
 }
 
 .menu__list > li {
@@ -503,6 +535,15 @@ body._touch .menu__list > li._active .menu__arrow {
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 500;
+  white-space: nowrap;
+  line-height: 100%;
+}
+
+@media (max-width: 767px) {
+  .slider__button {
+    font-size: 14px;
+    padding: 15px 20px;
+  }
 }
 
 .slider__button:hover {
@@ -768,8 +809,16 @@ box-shadow: 9px 9px 15px -1px rgba(0,0,0,0.15);
   overflow: hidden;
   flex-basis: 250px;
   flex-grow: 1;
-  /* height: 380px; */
-  
+}
+
+@media (max-width: 600px) {
+  .products__product {
+    flex-basis: 140px;
+  }
+
+  .products {
+    gap: 10px;
+  }
 }
 
 .product {
@@ -786,17 +835,29 @@ box-shadow: 9px 9px 15px -1px rgba(0,0,0,0.15);
   padding-bottom: 30px;
 }
 
+@media (max-width: 600px) {
+  .product {
+    padding-bottom: 10px;
+  }
+}
+
 .product__img {
   width: 100%;
   height: 200px;
   overflow: hidden;
 }
 
+@media (max-width: 767px) {
+  .product__img {
+    height: 150px;
+  }
+}
+
 .product__img img{
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: top center;
+  object-position: center;
   background-color: #fff;
 }
 
@@ -823,6 +884,16 @@ box-shadow: 9px 9px 15px -1px rgba(0,0,0,0.15);
   font-weight: 600;
   font-size: 17px;
   color: #333;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 767px) {
+  .product__title {
+    padding: 10px 10px 0px 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 14px;
+  }
 }
 
 .product__prev-price {
@@ -840,6 +911,17 @@ box-shadow: 9px 9px 15px -1px rgba(0,0,0,0.15);
   text-align: end;
 }
 
+@media (max-width: 600px) {
+  .product__price {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .product__prev-price {
+    font-size: 18px;
+  }
+}
+
 .product__prices {
   margin: 0 auto;
   width: 80%;
@@ -847,6 +929,14 @@ box-shadow: 9px 9px 15px -1px rgba(0,0,0,0.15);
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+  .product__prices {
+    width: 90%;
+    padding: 0 5px;
+    margin-bottom: 10px;
+  }
 }
 
 .product__read-more {
@@ -864,6 +954,15 @@ box-shadow: 9px 9px 15px -1px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
 }
 
+@media (max-width: 600px) {
+  .product__read-more {
+    width: 90%;
+    padding: 9px 0 8px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+}
+
 .product:hover {
   transform: scale(1.07);
   background-color: #c1c1c1;
@@ -876,7 +975,7 @@ box-shadow: 9px 9px 15px -1px rgba(0,0,0,0.15);
 
 .products__pagination {
   width: 100%;
-  height: 30px;
+  height: 90px;
   display: flex;
   visibility: visible;
   pointer-events: all;
@@ -914,6 +1013,8 @@ box-shadow: 9px 9px 15px -1px rgba(0,0,0,0.15);
   background-color: #ffffff;
   color: #333;
 }
+
+
 
 .pagination_list {
   display: flex;

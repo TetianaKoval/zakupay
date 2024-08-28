@@ -1,11 +1,17 @@
+// Функція для обчислення попередньої ціни
+function prevPriceCount(price, discount) {
+  return Math.ceil(price / (1 - discount / 100));
+}
+
+
 
 window.products = [
   {
     id: "tdk0",
     category: 'tovary-dlya-kuhni',
-    title: 'Багатофункціональна сендвічніца 6 в 1 MS-7706 1000 Вт',
+    title: '123Багато&shy;функціональна сендвічніца 6 в 1 MS-7706 1000 Вт',
     price: 1049,
-    prevPrice: 1299,
+    prevPrice: null,
     href:"https://zakupay-shop.com/bahatofunktsionalna-sendvichnitsa-6-v-1-ms-7706-1000-vt/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/1.webp'
@@ -15,7 +21,7 @@ window.products = [
     category: 'tovary-dlya-kuhni',
     title: 'Сушка для продуктів 800 Вт Zepline / Електрична сушарка для фруктів та овочів / Дегідратор',
     price: 1199,
-    prevPrice: 1632,
+    prevPrice: null,
     href:"https://zakupay-shop.com/sushka-dlia-produktiv-800-vt-zepline-elektrychna-susharka-dlia-fruktiv-ta-ovochiv-dehidrator/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/2.webp'
@@ -23,9 +29,9 @@ window.products = [
   {
     id: "tdk2",
     category: 'tovary-dlya-kuhni',
-    title: 'Багатофункціональна сендвічніца 6 в 1 MS-7706 1000 Вт',
+    title: '1234Багатофункціональна сендвічніца 6 в 1 MS-7706 1000 Вт',
     price: 1049,
-    prevPrice: 1299,
+    prevPrice: null,
     href:"https://zakupay-shop.com/bahatofunktsionalna-sendvichnitsa-6-v-1-ms-7706-1000-vt/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/1.webp'
@@ -35,7 +41,7 @@ window.products = [
     category: 'tovary-dlya-kuhni',
     title: 'Сушка для продуктів 800 Вт Zepline / Електрична сушарка для фруктів та овочів / Дегідратор',
     price: 1199,
-    prevPrice: 1632,
+    prevPrice: null,
     href:"https://zakupay-shop.com/sushka-dlia-produktiv-800-vt-zepline-elektrychna-susharka-dlia-fruktiv-ta-ovochiv-dehidrator/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/2.webp'
@@ -45,7 +51,7 @@ window.products = [
     category: 'tovary-dlya-kuhni',
     title: 'Багатофункціональна сендвічніца 6 в 1 MS-7706 1000 Вт',
     price: 1049,
-    prevPrice: 1299,
+    prevPrice: null,
     href:"https://zakupay-shop.com/bahatofunktsionalna-sendvichnitsa-6-v-1-ms-7706-1000-vt/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/1.webp'
@@ -55,7 +61,7 @@ window.products = [
     category: 'tovary-dlya-kuhni',
     title: 'Сушка для продуктів 800 Вт Zepline / Електрична сушарка для фруктів та овочів / Дегідратор',
     price: 1199,
-    prevPrice: 1632,
+    prevPrice: null,
     href:"https://zakupay-shop.com/sushka-dlia-produktiv-800-vt-zepline-elektrychna-susharka-dlia-fruktiv-ta-ovochiv-dehidrator/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/2.webp'
@@ -65,7 +71,7 @@ window.products = [
     category: 'tovary-dlya-kuhni',
     title: 'Багатофункціональна сендвічніца 6 в 1 MS-7706 1000 Вт',
     price: 1049,
-    prevPrice: 1299,
+    prevPrice: null,
     href:"https://zakupay-shop.com/bahatofunktsionalna-sendvichnitsa-6-v-1-ms-7706-1000-vt/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/1.webp'
@@ -75,7 +81,7 @@ window.products = [
     category: 'tovary-dlya-kuhni',
     title: 'Сушка для продуктів 800 Вт Zepline / Електрична сушарка для фруктів та овочів / Дегідратор',
     price: 1199,
-    prevPrice: 1632,
+    prevPrice: null,
     href:"https://zakupay-shop.com/sushka-dlia-produktiv-800-vt-zepline-elektrychna-susharka-dlia-fruktiv-ta-ovochiv-dehidrator/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/2.webp'
@@ -85,7 +91,7 @@ window.products = [
     category: 'tovary-dlya-kuhni',
     title: 'Багатофункціональна сендвічніца 6 в 1 MS-7706 1000 Вт',
     price: 1049,
-    prevPrice: 1299,
+    prevPrice: null,
     href:"https://zakupay-shop.com/bahatofunktsionalna-sendvichnitsa-6-v-1-ms-7706-1000-vt/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/1.webp'
@@ -95,7 +101,7 @@ window.products = [
     category: 'tovary-dlya-kuhni',
     title: 'Сушка для продуктів 800 Вт Zepline / Електрична сушарка для фруктів та овочів / Дегідратор',
     price: 1199,
-    prevPrice: 1632,
+    prevPrice: null,
     href:"https://zakupay-shop.com/sushka-dlia-produktiv-800-vt-zepline-elektrychna-susharka-dlia-fruktiv-ta-ovochiv-dehidrator/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/2.webp'
@@ -105,7 +111,7 @@ window.products = [
     category: 'tovary-dlya-kuhni',
     title: 'Багатофункціональна сендвічніца 6 в 1 MS-7706 1000 Вт',
     price: 1049,
-    prevPrice: 1299,
+    prevPrice: null,
     href:"https://zakupay-shop.com/bahatofunktsionalna-sendvichnitsa-6-v-1-ms-7706-1000-vt/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/1.webp'
@@ -115,7 +121,7 @@ window.products = [
     category: 'tovary-dlya-kuhni',
     title: 'Сушка для продуктів 800 Вт Zepline / Електрична сушарка для фруктів та овочів / Дегідратор',
     price: 1199,
-    prevPrice: 1632,
+    prevPrice: null,
     href:"https://zakupay-shop.com/sushka-dlia-produktiv-800-vt-zepline-elektrychna-susharka-dlia-fruktiv-ta-ovochiv-dehidrator/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/2.webp'
@@ -125,7 +131,7 @@ window.products = [
     category: 'tovary-dlya-kuhni',
     title: 'Багатофункціональна сендвічніца 6 в 1 MS-7706 1000 Вт',
     price: 1049,
-    prevPrice: 1299,
+    prevPrice: null,
     href:"https://zakupay-shop.com/bahatofunktsionalna-sendvichnitsa-6-v-1-ms-7706-1000-vt/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/1.webp'
@@ -135,7 +141,7 @@ window.products = [
     category: 'tovary-dlya-kuhni',
     title: 'Сушка для продуктів 800 Вт Zepline / Електрична сушарка для фруктів та овочів / Дегідратор',
     price: 1199,
-    prevPrice: 1632,
+    prevPrice: null,
     href:"https://zakupay-shop.com/sushka-dlia-produktiv-800-vt-zepline-elektrychna-susharka-dlia-fruktiv-ta-ovochiv-dehidrator/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/2.webp'
@@ -145,7 +151,7 @@ window.products = [
     category: 'tovary-dlya-kuhni',
     title: 'Багатофункціональна сендвічніца 6 в 1 MS-7706 1000 Вт',
     price: 1049,
-    prevPrice: 1299,
+    prevPrice: null,
     href:"https://zakupay-shop.com/bahatofunktsionalna-sendvichnitsa-6-v-1-ms-7706-1000-vt/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/1.webp'
@@ -155,7 +161,7 @@ window.products = [
     category: 'tovary-dlya-kuhni',
     title: 'Сушка для продуктів 800 Вт Zepline / Електрична сушарка для фруктів та овочів / Дегідратор',
     price: 1199,
-    prevPrice: 1632,
+    prevPrice: null,
     href:"https://zakupay-shop.com/sushka-dlia-produktiv-800-vt-zepline-elektrychna-susharka-dlia-fruktiv-ta-ovochiv-dehidrator/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/2.webp'
@@ -165,7 +171,7 @@ window.products = [
     category: 'instrumenty',
     title: 'Сушка для продуктів 800 Вт Zepline / Електрична сушарка для фруктів та овочів / Дегідратор',
     price: 1199,
-    prevPrice: 1632,
+    prevPrice: null,
     href:"https://zakupay-shop.com/sushka-dlia-produktiv-800-vt-zepline-elektrychna-susharka-dlia-fruktiv-ta-ovochiv-dehidrator/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/2.webp'
@@ -175,7 +181,7 @@ window.products = [
     category: 'elektronni-tovary',
     title: 'Сушка для продуктів 800 Вт Zepline / Електрична сушарка для фруктів та овочів / Дегідратор',
     price: 1199,
-    prevPrice: 1632,
+    prevPrice: null,
     href:"https://zakupay-shop.com/sushka-dlia-produktiv-800-vt-zepline-elektrychna-susharka-dlia-fruktiv-ta-ovochiv-dehidrator/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/2.webp'
@@ -185,7 +191,7 @@ window.products = [
     category: 'tovary-dlya-sadu',
     title: 'Сушка для продуктів 800 Вт Zepline / Електрична сушарка для фруктів та овочів / Дегідратор',
     price: 1199,
-    prevPrice: 1632,
+    prevPrice: null,
     href:"https://zakupay-shop.com/sushka-dlia-produktiv-800-vt-zepline-elektrychna-susharka-dlia-fruktiv-ta-ovochiv-dehidrator/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/2.webp'
@@ -195,7 +201,7 @@ window.products = [
     category: 'generatory',
     title: 'Сушка для продуктів 800 Вт Zepline / Електрична сушарка для фруктів та овочів / Дегідратор',
     price: 1199,
-    prevPrice: 1632,
+    prevPrice: null,
     href:"https://zakupay-shop.com/sushka-dlia-produktiv-800-vt-zepline-elektrychna-susharka-dlia-fruktiv-ta-ovochiv-dehidrator/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/2.webp'
@@ -205,9 +211,14 @@ window.products = [
     category: 'tovary-dlya-domu',
     title: 'Сушка для продуктів 800 Вт Zepline / Електрична сушарка для фруктів та овочів / Дегідратор',
     price: 1199,
-    prevPrice: 1632,
+    prevPrice: null,
     href:"https://zakupay-shop.com/sushka-dlia-produktiv-800-vt-zepline-elektrychna-susharka-dlia-fruktiv-ta-ovochiv-dehidrator/",
     productDiscount: 25,
     image: 'images/tovary-dlya-kuhni/2.webp'
   },
 ]
+
+// Обчислення prevPrice для кожного продукту
+window.products.forEach(product => {
+  product.prevPrice = prevPriceCount(product.price, product.productDiscount);
+});
